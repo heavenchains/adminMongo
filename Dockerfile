@@ -1,8 +1,12 @@
-FROM node:alpine
-WORKDIR /app/user
+FROM node:8
 
-COPY package.json .
-RUN npm install --production
+WORKDIR /usr/src/app
+
+COPY package*.json ./
+
+RUN npm install
 
 COPY . .
-CMD node app.js
+EXPOSE 1234
+CMD [ "npm", "start" ]
+
