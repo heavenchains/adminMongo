@@ -4,14 +4,14 @@ module.exports = {
   apps: [
     {
       name: 'admin',
-      script: './dist/src/index.js',
+      script: 'app.js',
       instances: 1,
       autorestart: true,
       watch:
         process.env.NODE_ENV !== 'production'
           ? path.resolve(__dirname, 'src')
           : false,
-      max_memory_restart: '1G'
+      max_memory_restart: '2G'
     }
   ]
 };
