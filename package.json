@@ -14,6 +14,7 @@
   },
   "scripts": {
     "start": "node app.js",
+    "pm2": "npx pm2 start ecosystem.config.js --no-daemon",
     "test": "find ./tests -name '*.js' | xargs mocha -R spec -t 5000",
     "packageOsx": "electron-packager ./ adminMongo --out=releases/ --platform=darwin --arch=x64 --prune --overwrite --ignore=releases/* --icon=public/logo.icns",
     "packageWin32": "electron-packager ./ adminMongo --out=releases/ --platform=win32 --arch=ia32 --prune --overwrite --ignore=releases/* --icon=public/logo.ico",
@@ -71,7 +72,8 @@
     "ncp": "^2.0.0",
     "nedb": "^1.8.0",
     "node-delete": "^0.1.2",
-    "serve-favicon": "~2.4.3"
+    "serve-favicon": "~2.4.3",
+    "pm2": "^4.0.0"
   },
   "license": "MIT",
   "devDependencies": {
